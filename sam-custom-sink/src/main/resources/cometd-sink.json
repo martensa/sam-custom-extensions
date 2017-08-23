@@ -1,0 +1,87 @@
+    {
+      "streamingEngine": "STORM",
+      "name": "COMETD-SINK",
+      "description": "Send event to Cometd http pub/sub server",
+      "jarFileName": "sam-custom-sink-0.0.5-jar-with-dependencies.jar",
+      "topologyComponentUISpecification": {
+        "fields": [
+          {
+            "uiName": "cometdPubSubUrl",
+            "fieldName": "cometdPubSubUrl",
+            "isUserInput": true,
+            "tooltip": "Cometd server URL",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": "http:\/\/localhost:8091\/cometd"
+          },
+          {
+            "uiName": "cometdPubSubChannel",
+            "fieldName": "cometdPubSubChannel",
+            "isUserInput": true,
+            "tooltip": "Cometd Channel",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": "\/"
+          }
+        ]
+      },
+      "inputSchema": {
+        "fields": [
+          {
+            "name": "serial_number",
+            "type": "STRING",
+            "optional": true
+          },
+          {
+            "name": "technician_id",
+            "type": "STRING",
+            "optional": true
+          },
+          {
+            "name": "device_model",
+            "type": "STRING",
+            "optional": true
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "optional": true
+          },
+          {
+            "name": "alert_description",
+            "type": "STRING",
+            "optional": true
+          },
+          {
+            "name": "longitude",
+            "type": "DOUBLE",
+            "optional": true
+          },
+          {
+            "name": "latitude",
+            "type": "DOUBLE",
+            "optional": true
+          },
+          {
+            "name": "signal_strength",
+            "type": "INTEGER",
+            "optional": true
+          },
+          {
+            "name": "internal_temp",
+            "type": "INTEGER",
+            "optional": true
+          }
+        ]
+      },
+      "outputSchema": {
+        "fields": [
+          {
+            "name": "output",
+            "type": "STRING",
+            "optional": true
+          }
+        ]
+      },
+      "customProcessorImpl": "hortonworks.hdf.sam.custom.sink.devicemanager.CometdPublisher"
+    }

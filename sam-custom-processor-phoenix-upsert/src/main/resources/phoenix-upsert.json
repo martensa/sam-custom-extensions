@@ -1,0 +1,74 @@
+{
+      "streamingEngine": "STORM",
+      "name": "UPSERT-PHOENIX",
+      "description": "UPSERT-PHOENIX",
+      "jarFileName": "sam-custom-processor-phoenix-upsert-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
+      "topologyComponentUISpecification": {
+        "fields": [
+          {
+            "uiName": "zkServerUrl",
+            "fieldName": "zkServerUrl",
+            "isUserInput": true,
+            "tooltip": "zkServerUrl",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "upsertSQL",
+            "fieldName": "upsertSQL",
+            "isUserInput": true,
+            "tooltip": "upsertSQL",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "secureCluster",
+            "fieldName": "secureCluster",
+            "isUserInput": true,
+            "tooltip": "secureCluster",
+            "isOptional": false,
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "uiName": "kerberosClientPrincipal",
+            "fieldName": "kerberosClientPrincipal",
+            "isUserInput": true,
+            "tooltip": "kerberosClientPrincipal",
+            "isOptional": true,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "kerberosKeyTabFile",
+            "fieldName": "kerberosKeyTabFile",
+            "isUserInput": true,
+            "tooltip": "kerberosKeyTabFile",
+            "isOptional": true,
+            "type": "string",
+            "defaultValue": ""
+          }
+        ]
+      },
+      "inputSchema": {
+        "fields": [
+          {
+            "name": "serial_number",
+            "type": "STRING",
+            "optional": false
+          }
+        ]
+      },
+      "outputSchema": {
+        "fields": [
+          {
+            "name": "output",
+            "type": "STRING",
+            "optional": true
+          }
+        ]
+      },
+      "customProcessorImpl": "hortonworks.hdf.sam.custom.processor.PhoenixUpsert"
+}

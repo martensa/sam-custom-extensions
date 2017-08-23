@@ -1,0 +1,84 @@
+{
+      "streamingEngine": "STORM",
+      "name": "EXPLODE-COLLECTION",
+      "description": "Explode collection/array type into individual fields",
+      "jarFileName": "sam-custom-processor-explode-collection-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
+      "topologyComponentUISpecification": {
+        "fields": [
+          {
+            "uiName": "arrayField",
+            "fieldName": "arrayField",
+            "isUserInput": true,
+            "tooltip": "filed to explode",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          }
+        ]
+      },
+      "inputSchema": {
+        "fields": [
+          {
+            "name": "arrayField",
+            "type": "ARRAY",
+            "optional": false,
+            "members": null
+          }
+        ]
+      },
+      "outputSchema": {
+        "fields": [
+          {
+            "name": "field_0",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_1",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_2",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_3",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_4",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_5",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_6",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_7",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_8",
+            "type": "INTEGER",
+            "optional": false
+          },
+          {
+            "name": "field_9",
+            "type": "INTEGER",
+            "optional": false
+          }
+        ]
+      },
+      "customProcessorImpl": "hortonworks.hdf.sam.custom.processor.ExplodeCollection"
+}

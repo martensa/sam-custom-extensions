@@ -1,0 +1,142 @@
+{
+      "streamingEngine": "STORM",
+      "name": "ROUTE-TECH",
+      "description": "recommend technician to address incident",
+      "jarFileName": "sam-custom-processor-routetech-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
+      "topologyComponentUISpecification": {
+        "fields": [
+          {
+            "uiName": "zkHost",
+            "fieldName": "zkHost",
+            "isUserInput": true,
+            "tooltip": "zkHost",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "zkPort",
+            "fieldName": "zkPort",
+            "isUserInput": true,
+            "tooltip": "zkPort",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "zkHbasePath",
+            "fieldName": "zkHbasePath",
+            "isUserInput": true,
+            "tooltip": "zkHbasePath",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "techLocationTable",
+            "fieldName": "techLocationTable",
+            "isUserInput": true,
+            "tooltip": "techLocationTable",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "techLocationTableColumnFamily",
+            "fieldName": "techLocationTableCf",
+            "isUserInput": true,
+            "tooltip": "techLocationTable column family",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "deviceTable",
+            "fieldName": "deviceTable",
+            "isUserInput": true,
+            "tooltip": "deviceTable",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "deviceTableCf",
+            "fieldName": "deviceTableCf",
+            "isUserInput": true,
+            "tooltip": "deviceTableCf",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          }
+        ]
+      },
+      "inputSchema": {
+        "fields": [
+          {
+            "name": "serial_number",
+            "type": "STRING",
+            "optional": false
+          },
+          {
+            "name": "device_model",
+            "type": "STRING",
+            "optional": false
+          },
+          {
+            "name": "longitude",
+            "type": "DOUBLE",
+            "optional": false
+          },
+          {
+            "name": "latitude",
+            "type": "DOUBLE",
+            "optional": false
+          }
+        ]
+      },
+      "outputSchema": {
+        "fields": [
+          {
+            "name": "technician_id",
+            "type": "STRING",
+            "optional": false
+          },
+          {
+            "name": "longitude",
+            "type": "DOUBLE",
+            "optional": false
+          },
+          {
+            "name": "latitude",
+            "type": "DOUBLE",
+            "optional": false
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "optional": false
+          },
+          {
+            "name": "ip_address",
+            "type": "STRING",
+            "optional": false
+          },
+          {
+            "name": "port",
+            "type": "STRING",
+            "optional": false
+          },
+          {
+            "name": "destination_longitude",
+            "type": "DOUBLE",
+            "optional": false
+          },
+          {
+            "name": "destination_latitude",
+            "type": "DOUBLE",
+            "optional": false
+          }
+        ]
+      },
+      "customProcessorImpl": "hortonworks.hdf.sam.custom.processor.RouteTech"
+}
