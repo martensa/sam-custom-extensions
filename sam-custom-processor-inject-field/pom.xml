@@ -1,28 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hortonworks.hdf.sam.custom</groupId>
+  <artifactId>sam-custom-processor-inject-field</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   
-  	<modelVersion>4.0.0</modelVersion>
-  	<groupId>hortonworks.hdf.sam.custom</groupId>
-  	<artifactId>sam-custom-extensions</artifactId>
-  	<version>0.0.5</version>
-  	<packaging>pom</packaging>
-
-
-  	<modules>
-  		<module>sam-custom-processor</module>
-  		<module>sam-custom-udf</module>
-  		<module>sam-custom-sink</module>
-  		<module>sam-custom-processor-routetech</module>
-  		<module>sam-custom-processor-explode-collection</module>
-  	</modules>
-  	
-  	
-	<properties>
+  		<properties>
 		<streamline.version>0.5.0.3.0.0.0-452</streamline.version>
 		<slf4j.version>1.7.12</slf4j.version>
 		<junit.version>4.5</junit.version> 
-	</properties>
-
-	<dependencies>
+	</properties> 
+	
+ 	<dependencies>
+        
         <dependency>
             <groupId>com.hortonworks.streamline</groupId>
             <artifactId>streamline-sdk</artifactId>
@@ -95,6 +84,4 @@
 		    </plugin>	            
         </plugins>
     </build>    
-
-  	
 </project>
