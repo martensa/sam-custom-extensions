@@ -24,7 +24,6 @@ public class ExplodeCollection  implements CustomProcessorRuntime {
 	
 	private static final String EXPECTED_ARRAY_LENGTH = "expectedArrayLength";
 	private static final String ARRAY_GROUPBY_FIELD_KEY = "arrayGroupByField";
-	private static final String ARRAY_FIELD_KEY = "arrayField";
 	private int expectedArrayLength = 0;
 	private String arrayGroupByFieldKey;
 	private String arrayFieldKey;
@@ -33,7 +32,6 @@ public class ExplodeCollection  implements CustomProcessorRuntime {
 	public void initialize(Map<String, Object> config) {
 		expectedArrayLength = (Integer) config.get(EXPECTED_ARRAY_LENGTH);
 		arrayGroupByFieldKey = (String) config.get(ARRAY_GROUPBY_FIELD_KEY);
-		arrayFieldKey = (String) config.get(ARRAY_FIELD_KEY);
 	}
 
 	public List<StreamlineEvent> process(StreamlineEvent event) throws ProcessingException {
@@ -43,7 +41,7 @@ public class ExplodeCollection  implements CustomProcessorRuntime {
         Map<String, Object> arrayFields = new HashMap<String, Object>();
         
         Object arrayGroupKey = event.get(arrayGroupByFieldKey);
-        List<Object> incomingArray = (List<Object>) event.get(arrayFieldKey);
+        List<Object> incomingArray = (List<Object>) event.get("arrayField");
         List<Object> storedPartialArray = new ArrayList<Object>();
         List<Object> completedArray = new ArrayList<Object>();
     	
