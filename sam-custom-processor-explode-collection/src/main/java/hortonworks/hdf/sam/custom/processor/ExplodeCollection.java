@@ -1,6 +1,5 @@
 package hortonworks.hdf.sam.custom.processor;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,7 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.hadoop.conf.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,12 +24,12 @@ public class ExplodeCollection  implements CustomProcessorRuntime {
 	private static final String ARRAY_GROUPBY_FIELD_KEY = "arrayGroupByField";
 	private int expectedArrayLength = 0;
 	private String arrayGroupByFieldKey;
-	private String arrayFieldKey;
 	private Map<Object,Object> buffer;
 	
 	public void initialize(Map<String, Object> config) {
 		expectedArrayLength = (Integer) config.get(EXPECTED_ARRAY_LENGTH);
 		arrayGroupByFieldKey = (String) config.get(ARRAY_GROUPBY_FIELD_KEY);
+		buffer = new HashMap<Object,Object>();
 	}
 
 	public List<StreamlineEvent> process(StreamlineEvent event) throws ProcessingException {
@@ -69,7 +67,7 @@ public class ExplodeCollection  implements CustomProcessorRuntime {
 
         if(completedArray.size() == expectedArrayLength){
         	int count = 0;
-        	Iterator<Object> iterator = incomingArray.iterator();
+        	Iterator<Object> iterator = completedArray.iterator();
         	while(iterator.hasNext()){
         		arrayFields.put("field_"+count, iterator.next());
         		count++;
@@ -79,7 +77,7 @@ public class ExplodeCollection  implements CustomProcessorRuntime {
 		
         	StreamlineEvent enrichedEvent = builder.dataSourceId(event.getDataSourceId()).build();
         	LOG.info("********** ExplodeCollection process() Output Event: " + enrichedEvent );
-        	List<StreamlineEvent> newEvents= Collections.<StreamlineEvent>singletonList(enrichedEvent);
+        	List<StreamlineEvent> newEvents = Collections.<StreamlineEvent>singletonList(enrichedEvent);
         	return newEvents;
         }else{
         	LOG.info("********** ExplodeCollection process() Expected Array size for Key: "+ arrayGroupKey +" : has not yet been reached... "
