@@ -1,7 +1,7 @@
 {
       "streamingEngine": "STORM",
       "name": "ENRICH-PHOENIX",
-      "description": "enrich phoenix",
+      "description": "Enriches the input schema with data from Phoenix based on user supplied SQL",
       "jarFileName": "sam-custom-processor-0.0.5-jar-with-dependencies.jar",
       "topologyComponentUISpecification": {
         "fields": [
