@@ -1,7 +1,7 @@
 {
       "streamingEngine": "STORM",
-      "name": "ENRICH-WEATHER",
-      "description": "Enrichment with normalized weather data for a geo location",
+      "name": "NORMALIZE-MODEL-FEATURES",
+      "description": "Normalize the features of the model before passing it to model",
       "jarFileName": "sam-custom-processor-0.0.5A.jar",
       "topologyComponentUISpecification": {
         "fields": []
