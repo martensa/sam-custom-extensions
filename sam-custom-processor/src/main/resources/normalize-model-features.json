@@ -2,7 +2,7 @@
       "streamingEngine": "STORM",
       "name": "NORMALIZE-MODEL-FEATURES",
       "description": "Normalize the features of the model before passing it to model",
-      "jarFileName": "sam-custom-processor-0.0.5A.jar",
+      "jarFileName": "sam-custom-processor-0.0.5a.jar",
       "topologyComponentUISpecification": {
         "fields": []
       },
