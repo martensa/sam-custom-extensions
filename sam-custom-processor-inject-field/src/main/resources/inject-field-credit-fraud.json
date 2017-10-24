@@ -1,0 +1,43 @@
+{
+      "streamingEngine": "STORM",
+      "name": "INJECT-FIELD",
+      "description": "Inject a new field that does not existing on the current event. The field value is user defined and of STRING type",
+      "jarFileName": "sam-custom-processor-inject-field-0.0.1-SNAPSHOT.jar",
+      "topologyComponentUISpecification": {
+        "fields": [
+          {
+            "uiName": "newFieldName",
+            "fieldName": "newFieldName",
+            "isUserInput": true,
+            "tooltip": "newFieldName",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": "newField"
+          },
+          {
+            "uiName": "newFieldValue",
+            "fieldName": "newFieldValue",
+            "isUserInput": true,
+            "tooltip": "newFieldValue",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          }
+        ]
+      },
+      "inputSchema": {
+        "fields": [
+          
+        ]
+      },
+      "outputSchema": {
+        "fields": [
+          {
+            "name": "newField",
+            "type": "STRING",
+            "optional": false
+          }
+        ]
+      },
+      "customProcessorImpl": "hortonworks.hdf.sam.custom.processor.InjectField"
+}

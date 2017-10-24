@@ -13,6 +13,7 @@
   		<module>sam-custom-sink</module>
   		<module>sam-custom-processor-routetech</module>
   		<module>sam-custom-processor-explode-collection</module>
+  		<module>sam-custom-processor-score-transaction</module>
   	</modules>
   	
   	

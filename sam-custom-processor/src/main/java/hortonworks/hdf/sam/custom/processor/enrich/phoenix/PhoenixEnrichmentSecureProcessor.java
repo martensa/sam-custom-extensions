@@ -163,8 +163,8 @@ public class PhoenixEnrichmentSecureProcessor implements CustomProcessorRuntime 
 			} else {
 				String errorMsg = "No results found for enrichment query: "
 						+ enrichSQLToExecute;
-				LOG.error(errorMsg);
-				throw new RuntimeException(errorMsg);
+				LOG.warn(errorMsg);
+				//throw new RuntimeException(errorMsg);
 			}
 		} catch (SQLException e) {
 			String errorMsg = "Error enriching event[" + event

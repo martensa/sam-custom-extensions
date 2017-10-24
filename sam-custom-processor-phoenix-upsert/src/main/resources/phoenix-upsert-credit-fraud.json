@@ -1,0 +1,98 @@
+{
+      "streamingEngine": "STORM",
+      "name": "UPSERT-PHOENIX",
+      "description": "UPSERT-PHOENIX",
+      "jarFileName": "sam-custom-processor-phoenix-upsert-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
+      "topologyComponentUISpecification": {
+        "fields": [
+          {
+            "uiName": "zkServerUrl",
+            "fieldName": "zkServerUrl",
+            "isUserInput": true,
+            "tooltip": "zkServerUrl",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "upsertSQL",
+            "fieldName": "upsertSQL",
+            "isUserInput": true,
+            "tooltip": "upsertSQL",
+            "isOptional": false,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "secureCluster",
+            "fieldName": "secureCluster",
+            "isUserInput": true,
+            "tooltip": "secureCluster",
+            "isOptional": false,
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "uiName": "kerberosClientPrincipal",
+            "fieldName": "kerberosClientPrincipal",
+            "isUserInput": true,
+            "tooltip": "kerberosClientPrincipal",
+            "isOptional": true,
+            "type": "string",
+            "defaultValue": ""
+          },
+          {
+            "uiName": "kerberosKeyTabFile",
+            "fieldName": "kerberosKeyTabFile",
+            "isUserInput": true,
+            "tooltip": "kerberosKeyTabFile",
+            "isOptional": true,
+            "type": "string",
+            "defaultValue": ""
+          }
+        ]
+      },
+      "inputSchema": {
+        "fields": [
+    {"name": "accountnumber", "type": "STRING","optional": true},
+    {"name": "firstname", "type": "STRING","optional": true},
+    {"name": "lastname", "type": "STRING","optional": true},
+    {"name": "age", "type": "STRING","optional": true},
+    {"name": "gender", "type": "STRING","optional": true},
+    {"name": "street", "type": "STRING","optional": true},
+    {"name": "city", "type": "STRING","optional": true},
+    {"name": "state", "type": "STRING","optional": true},
+    {"name": "zipcode", "type": "STRING","optional": true},
+	{"name": "fraudulent", "type": "STRING","optional": true},
+    {"name": "accounttype", "type": "STRING","optional": true},
+    {"name": "merchantid", "type": "STRING","optional": true},
+    {"name": "merchanttype", "type": "STRING","optional": true},
+    {"name": "transactionid", "type": "STRING","optional": true},
+    {"name": "currency", "type": "STRING","optional": true},
+    {"name": "amount", "type": "DOUBLE","optional": true},
+    {"name": "homelatitude", "type": "DOUBLE","optional": true},
+    {"name": "homelongitude", "type": "DOUBLE","optional": true},
+    {"name": "currentlatitude", "type": "DOUBLE","optional": true},
+    {"name": "currentlongitude", "type": "DOUBLE","optional": true},
+    {"name": "lastlatitude", "type": "DOUBLE","optional": true},
+    {"name": "lastlongitude", "type": "DOUBLE","optional": true},
+    {"name": "distancedev", "type": "DOUBLE","optional": true},
+    {"name": "distancemean", "type": "DOUBLE","optional": true},
+    {"name": "distance", "type": "DOUBLE","optional": true},
+    {"name": "amountdev", "type": "DOUBLE","optional": true},
+    {"name": "amountmean", "type": "DOUBLE","optional": true},
+    {"name": "score", "type": "DOUBLE","optional": true},
+    {"name": "transactiontimestamp", "type": "STRING","optional": true}
+  ]
+      },
+      "outputSchema": {
+        "fields": [
+          {
+            "name": "output",
+            "type": "STRING",
+            "optional": true
+          }
+        ]
+      },
+      "customProcessorImpl": "hortonworks.hdf.sam.custom.processor.PhoenixUpsert"
+}
