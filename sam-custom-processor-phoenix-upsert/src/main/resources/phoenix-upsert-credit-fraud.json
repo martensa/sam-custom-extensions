@@ -1,7 +1,7 @@
 {
       "streamingEngine": "STORM",
       "name": "UPSERT-PHOENIX",
-      "description": "UPSERT-PHOENIX",
+      "description": "Upsert incoming event into Phoenix data store",
       "jarFileName": "sam-custom-processor-phoenix-upsert-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
       "topologyComponentUISpecification": {
         "fields": [
