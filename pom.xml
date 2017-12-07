@@ -13,12 +13,12 @@
   		<module>sam-custom-sink</module>
   		<module>sam-custom-processor-routetech</module>
   		<module>sam-custom-processor-explode-collection</module>
-  		<module>sam-custom-processor-score-transaction</module>
+  		<!-- <module>sam-custom-processor-score-transaction</module> -->
   	</modules>
   	
   	
 	<properties>
-		<streamline.version>0.5.0.3.1.0.0-211</streamline.version>
+		<streamline.version>0.5.0.3.1.0.0-281</streamline.version>
 		<slf4j.version>1.7.12</slf4j.version>
 		<junit.version>4.5</junit.version> 
 	</properties>
