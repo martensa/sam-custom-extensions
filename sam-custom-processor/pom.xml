@@ -11,7 +11,7 @@
   	<name>sam-custom-extensions-processors</name>
   
 	<properties>
-		<phoenix.version>4.7.0.2.6.0.12-1</phoenix.version>
+		<phoenix.version>5.0.0.3.0.0.0-1634</phoenix.version>
 	</properties>  
 	
  	<dependencies>
